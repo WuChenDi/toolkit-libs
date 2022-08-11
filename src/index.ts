@@ -1,1 +1,1 @@
-export * from './_browser/index';
+export * from './_browser';
