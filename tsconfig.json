@@ -10,6 +10,9 @@
     "strict": true,
     "noImplicitAny": false,
     "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"]
+    },
     "outDir": "dist",
     "declarationDir": ".",
     "esModuleInterop": true,
