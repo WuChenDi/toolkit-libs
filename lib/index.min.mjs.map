@@ -1,0 +1,1 @@
+{"version":3,"file":"index.min.mjs","sources":["../src/_browser/isBrowser.ts"],"sourcesContent":[null],"names":["isBrowserFn","window","document","_typeof"],"mappings":"sOAIaA,IAAAA,EAAc,WACzB,MAAyB,YAAXC,oBAAAA,OAAAA,YAAAA,EAAAA,UAA2C,YAApB,oBAAOC,SAAP,YAAAC,EAAOD,UAC7C"}
