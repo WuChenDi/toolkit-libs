@@ -16,3 +16,4 @@ we actually develop in TypeScript.
 [🚀 Get started](get-started.md){: .btn .btn-purple }
 
 This documentation is maintained by [wudi](https://github.com/WuChenDi)
+{: .fs-2 }
