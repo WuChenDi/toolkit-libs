@@ -1,0 +1,15 @@
+# General
+title: "notes Docs"
+description: "notes Docs"
+
+#Theming
+remote_theme: pmarsceill/just-the-docs
+color_scheme: "light"
+search_enabled: true
+logo: "/logo.svg"
+
+# External Links
+aux_links:
+  "notes on Github":
+    - "//github.com/WuChenDi/notes"
+aux_links_new_tab: true
