@@ -4,18 +4,17 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2019,
     sourceType: 'module',
+    project: './tsconfig.eslint.json',
   },
-  extends: [
-    'plugin:prettier/recommended',
-  ],
+  extends: ['plugin:prettier/recommended'],
   env: {
     es6: true,
     node: true,
   },
 
   rules: {
-    "no-undef": "error",
-    "eqeqeq": "error",
-    "no-console": "error"
+    'no-undef': 'error',
+    eqeqeq: 'error',
+    'no-console': 'error',
   },
-};
+}

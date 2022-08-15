@@ -1,24 +1,28 @@
-import path from 'path';
-import commonjs from '@rollup/plugin-commonjs';
-import babel from '@rollup/plugin-babel';
-import dts from 'rollup-plugin-dts';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
+import path from 'path'
+import commonjs from '@rollup/plugin-commonjs'
+import babel from '@rollup/plugin-babel'
+import dts from 'rollup-plugin-dts'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
 // import typescript from 'typescript'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import { terser } from 'rollup-plugin-terser';
-import { DEFAULT_EXTENSIONS } from '@babel/core';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import { terser } from 'rollup-plugin-terser'
+import { DEFAULT_EXTENSIONS } from '@babel/core'
 
-import pkg from './package.json';
+// plugins
+// import banner from './PluginsBanner'
 
-const extensions = ['.ts'];
-const resolve = (...args) => path.resolve(...args);
+import pkg from './package.json'
+
+const extensions = ['.ts']
+const resolve = (...args) => path.resolve(...args)
 
 const paths = {
   input: path.join(__dirname, '/src/index.ts'),
   output: path.join(__dirname, '/lib'),
 }
 
+/** @type {import('rollup').defineConfig} */
 const config = [
   {
     input: paths.input,
@@ -40,7 +44,7 @@ const config = [
         file: path.join(paths.output, 'index.mjs'),
         format: 'esm',
         name: 'atools',
-        sourcemap: true
+        sourcemap: true,
       },
       {
         file: path.join(paths.output, 'index.min.mjs'),
@@ -48,7 +52,7 @@ const config = [
         name: 'atools',
         sourcemap: true,
         plugins: [terser()],
-      }
+      },
     ],
     plugins: [
       peerDepsExternal(),
@@ -60,13 +64,16 @@ const config = [
       // ts 的功能只在于编译出声明文件，所以 target 为 ESNext，编译交给 babel 来做
       typescript({
         tsconfig: './tsconfig.json',
-        declaration: false
+        declaration: false,
       }),
       babel({
         babelHelpers: 'bundled',
         extensions: [...DEFAULT_EXTENSIONS, '.ts'],
-        exclude: 'node_modules/**'
+        exclude: 'node_modules/**',
       }),
+      // banner(
+      //   'test rollup-plugin-banner v<%= pkg.version %> by<%= pkg.author %>'
+      // ),
     ],
   },
   {
@@ -78,6 +85,6 @@ const config = [
     },
     plugins: [dts()],
   },
-];
+]
 
-export default config;
+export default config
